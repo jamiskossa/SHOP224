@@ -1,0 +1,36 @@
+/* responsive.css */
+
+/* Styles pour les écrans larges */
+@media (min-width: 768px) {
+
+    .team-members {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+}
+
+/* Styles pour les écrans étroits */
+@media (max-width: 767px) {
+
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .toggle-menu {
+      display: block;
+    }
+  
+    nav ul {
+      display: none;
+      flex-direction: column;
+    }
+  
+    nav ul.show {
+      display: flex;
+    }
+  }

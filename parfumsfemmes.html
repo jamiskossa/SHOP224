@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfums pour Femmes | Shop224</title>
+    <style>
+        /* Styles internes pour une mise en forme responsive et futuriste */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #fffacd;
+        }
+
+        .toggle-menu {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .product-section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #ff1493;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .description {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .product-card .price {
+            font-size: 1.2rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product-card .btn-details {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #ff69b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .product-card .btn-details:hover {
+            background: #ff1493;
+        }
+
+        footer {
+            background: #ff1493;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            margin-top: auto;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fffacd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            .toggle-menu {
+                display: block;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="images/SHOP224.png" alt="Logo Shop224">
+            </div>
+            <button class="toggle-menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#parfums">Parfums</a></li>
+                    <li><a href="#cremes">Crèmes</a></li>
+                    <li><a href="#maquillage">Maquillage</a></li>            
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="product-section">
+                <h1 class="section-title">Parfums pour Femmes</h1>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="assets/images/parfums/jadore_dior.jpg" alt="J'adore Dior">
+                        <h2>J'adore Dior</h2>
+                        <p class="description">Un parfum floral et féminin qui respire l'élégance et la beauté.</p>
+                        <p class="price">95 €</p>
+                        <a href="details.html?product=jadore_dior" class="btn-details">Voir Détails</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/images/parfums/flower_by_kenzo.jpg" alt="Flower by Kenzo">
+                        <h2>Flower by Kenzo</h2>
+                        <p class="description">Une fragrance douce et poudrée qui célèbre la nature et la féminité.</p>
+                        <p class="price">80 €</p>
+                        <a href="details.html?product=flower_by_kenzo" class="btn-details">Voir Détails</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/images/parfums/la_vie_est_belle.jpg" alt="La Vie Est Belle">
+                        <h2>La Vie Est Belle</h2>
+                        <p class="description">Un parfum gourmand et joyeux, symbole de bonheur et de liberté.</p>
+                        <p class="price">90 €</p>
+                        <a href="details.html?product=la_vie_est_belle" class="btn-details">Voir Détails</a>
+                    </div>
+                    <!-- Ajouter plus de cartes de produits ici -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Shop224 par YATTARA Ousmane. Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

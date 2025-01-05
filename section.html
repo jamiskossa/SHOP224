@@ -1,0 +1,275 @@
+<html><head><base href="https://example.com/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* Variables et styles généraux */
+:root {
+  --primary-color: #00f7ff;
+  --male-color: #2196F3;
+  --female-color: #FF4081;
+  --dark-bg: #1a1a2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: var(--dark-bg);
+  color: white;
+}
+
+/* Navigation */
+nav {
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Styles des sections */
+section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Section Parfums */
+.parfums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.parfum-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.parfum-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,247,255,0.3);
+}
+
+.homme-card {
+  border: 2px solid var(--male-color);
+}
+
+.femme-card {
+  border: 2px solid var(--female-color);
+}
+
+/* Section Crèmes */
+.cremes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.creme-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Section Maquillage */
+.makeup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.makeup-item {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--primary-color),
+                 0 0 20px var(--primary-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--primary-color),
+                 0 0 30px var(--primary-color);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .parfums-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#parfums">Parfums</a></li>
+    <li><a href="#cremes">Crèmes</a></li>
+    <li><a href="#maquillage">Maquillage</a></li>
+  </ul>
+</nav>
+
+<section id="parfums">
+  <h2 class="section-title">Parfums</h2>
+  <div class="parfums-grid">
+    <div class="parfum-card homme-card">
+      <h3>Pour Homme</h3>
+      <div class="parfum-item">
+        <h4>Blue de Channel</h4>
+        <p>Une fragrance boisée et fraîche</p>
+        <span class="price">89.99€</span>
+      </div>
+      <!-- Plus de parfums homme -->
+    </div>
+    
+    <div class="parfum-card femme-card">
+      <h3>Pour Femme</h3>
+      <div class="parfum-item">
+        <h4>N°5 de Channel</h4>
+        <p>Un classique intemporel</p>
+        <span class="price">99.99€</span>
+      </div>
+      <!-- Plus de parfums femme -->
+    </div>
+  </div>
+</section>
+
+<section id="cremes">
+  <h2 class="section-title">Crèmes Corporelles</h2>
+  <div class="cremes-container">
+    <div class="creme-card homme-card">
+      <h3>Soins Homme</h3>
+      <div class="creme-item">
+        <h4>Hydratant Intense</h4>
+        <p>Protection et hydratation 24h</p>
+        <span class="price">45.99€</span>
+      </div>
+    </div>
+    
+    <div class="creme-card femme-card">
+      <h3>Soins Femme</h3>
+      <div class="creme-item">
+        <h4>Crème Anti-âge</h4>
+        <p>Formule régénérante</p>
+        <span class="price">55.99€</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="maquillage">
+  <h2 class="section-title">Maquillage</h2>
+  <div class="makeup-grid">
+    <div class="makeup-item">
+      <h4>Rouge à Lèvres</h4>
+      <p>Tenue longue durée</p>
+      <span class="price">25.99€</span>
+    </div>
+    <div class="makeup-item">
+      <h4>Mascara</h4>
+      <p>Volume extrême</p>
+      <span class="price">29.99€</span>
+    </div>
+    <div class="makeup-item">
+      <h4>Fond de Teint</h4>
+      <p>Couvrance parfaite</p>
+      <span class="price">35.99€</span>
+    </div>
+  </div>
+</section>
+
+<script>
+// Animation au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.parfum-card, .creme-card, .makeup-item').forEach((el) => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(50px)';
+  observer.observe(el);
+});
+
+// Smooth scroll
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Hover effects
+document.querySelectorAll('.parfum-card, .creme-card, .makeup-item').forEach(card => {
+  card.addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.05)';
+  });
+  
+  card.addEventListener('mouseout', function() {
+    this.style.transform = 'scale(1)';
+  });
+});
+</script>
+
+</body></html>

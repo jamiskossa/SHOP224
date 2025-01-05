@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soins pour Hommes | Shop224</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+            padding: 0 15px;
+        }
+    
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #2196f3, #1e88e5);
+            padding: 10px 20px;
+            color: #fff;
+        }
+    
+        .logo img {
+            max-width: 150px;
+        }
+    
+        .toggle-menu {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+    
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+        }
+    
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+    
+        /* Main Section */
+        .product-section {
+            margin: 20px 0;
+        }
+    
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1e88e5;
+        }
+    
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+    
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+    
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        .product-card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333;
+        }
+    
+        .product-card .description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+    
+        .product-card .price {
+            font-size: 18px;
+            color: #2196f3;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    
+        .btn-details {
+            display: inline-block;
+            background: #1e88e5;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: background 0.3s ease;
+        }
+    
+        .btn-details:hover {
+            background: #1565c0;
+        }
+    
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(to right, #2196f3, #1e88e5);
+            color: #fff;
+            font-size: 14px;
+        }
+    
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+    
+        .social-icons a:hover {
+            color: #ffd54f;
+        }
+    
+        /* Responsive Menu */
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block;
+            }
+    
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #1e88e5;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                border-radius: 8px;
+                padding: 10px;
+                width: 200px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+    
+            nav ul li {
+                margin: 10px 0;
+            }
+    
+            nav ul.show {
+                display: flex;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .product-card {
+                font-size: 14px;
+            }
+    
+            .product-card .description {
+                font-size: 12px;
+            }
+    
+            .btn-details {
+                padding: 5px 10px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="images/SHOP224.png" alt="Logo Shop224">
+            </div>
+            <button class="toggle-menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#parfums">Parfums</a></li>
+                    <li><a href="#cremes">Crèmes</a></li>
+                    <li><a href="#maquillage">Maquillage</a></li>            
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="product-section">
+                <h1 class="section-title">Soins pour Hommes</h1>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="assets/images/soins/gel_nettoyant.jpg" alt="Gel Nettoyant">
+                        <h2>Gel Nettoyant</h2>
+                        <p class="description">Un gel nettoyant doux pour une peau propre et fraîche.</p>
+                        <p class="price">12 €</p>
+                        <a href="details.html?product=gel_nettoyant" class="btn-details">Voir Détails</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/images/soins/creme_hydratante.jpg" alt="Crème Hydratante">
+                        <h2>Crème Hydratante</h2>
+                        <p class="description">Hydrate intensément votre peau pour une sensation de confort.</p>
+                        <p class="price">15 €</p>
+                        <a href="details.html?product=creme_hydratante" class="btn-details">Voir Détails</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/images/soins/baume_apres_rasage.jpg" alt="Baume Après-Rasage">
+                        <h2>Baume Après-Rasage</h2>
+                        <p class="description">Apaise et hydrate la peau après le rasage.</p>
+                        <p class="price">10 €</p>
+                        <a href="details.html?product=baume_apres_rasage" class="btn-details">Voir Détails</a>
+                    </div>
+                    <!-- Ajouter plus de cartes de produits ici -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Shop224 par YATTARA Ousmane. Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/kankoushop" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

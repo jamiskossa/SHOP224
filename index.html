@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <title>Shop224 - Accueil</title>
+    <style>
+        :root {
+            --primary-color: #3c8dbc;
+            --secondary-color: #2c3e50;
+            --accent-color: #18bc9c;
+            --text-light: #ecf0f1;
+            --text-dark: #34495e;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-dark);
+            background: #f4f4f9;
+            line-height: 1.6;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            background: var(--primary-color);
+            padding: 10px 20px;
+            color: var(--text-light);
+        }
+
+        header .logo img {
+            max-width: 120px;
+        }
+
+        .toggle-menu {
+            display: none;
+            background: var(--accent-color);
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        .banner {
+            display: grid;
+            place-items: center;
+            background: var(--secondary-color);
+            padding: 50px 20px;
+            color: var(--text-light);
+        }
+
+        .banner iframe {
+            max-width: 100%;
+            border: none;
+        }
+
+        main {
+            padding: 20px;
+            display: grid;
+            gap: 30px;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .parfums-grid, .makeup-grid, .cremes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .parfum-card, .creme-card, .makeup-item {
+            background: var(--secondary-color);
+            padding: 15px;
+            color: var(--text-light);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .parfum-card:hover, .creme-card:hover, .makeup-item:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-light);
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-color);
+        }
+
+        .newsletter {
+            text-align: center;
+            padding: 20px;
+            background: var(--accent-color);
+            color: var(--text-light);
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .newsletter button {
+            padding: 10px 15px;
+            border: none;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter button:hover {
+            background: var(--primary-color);
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .chat-widget:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .toggle-menu {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: var(--primary-color);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="logo">
+            <img src="images/SHOP224.png" alt="Logo Shop224">
+        </div>
+        <button class="toggle-menu">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#parfums">Parfums</a></li>
+                <li><a href="#cremes">Crèmes</a></li>
+                <li><a href="#maquillage">Maquillage</a></li>            
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jU9xmv611Hs?autoplay=1&mute=1&loop=1&playlist=jU9xmv611Hs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    <main>
+        <section class="intro">
+            <h1>Bienvenue chez Shop224</h1>
+            <p>Explorez nos produits cosmétiques et parfums en lot à des prix exceptionnels.</p>
+        </section>
+
+        <section id="parfums">
+            <h2 class="section-title">Parfums</h2>
+            <div class="parfums-grid">
+              <div class="parfum-card homme-card">
+                <h3>Pour Homme</h3>
+                <div class="parfum-item">
+                  <img src="images/out-0 (24).webp" width="300" alt="Logo Shop224">
+                  <h4>dior_sauvage</h4>
+                  <p>Une fragrance boisée et fraîche</p>
+                  <a href="parfumshommes.html" class="cta-btn">Explorer la Collection</a>
+                </div>
+                <!-- Plus de parfums homme -->
+              </div>
+              
+              <div class="parfum-card femme-card">
+                <h3>Pour Femme</h3>
+                <div class="parfum-item">
+                  <img src="images/out-0 (3).webp" width="300" alt="Logo Shop224">
+                  <h4>N°5 de Channel</h4>
+                  <p>Un classique intemporel</p>
+                  <a href="parfumsfemmes.html" class="cta-btn">Explorer la Collection</a>
+                </div>
+                <!-- Plus de parfums femme -->
+              </div>
+            </div>
+          </section>
+          
+          <section id="cremes">
+            <h2 class="section-title">Crèmes Corporelles</h2>
+            <div class="cremes-container">
+              <div class="creme-card homme-card">
+                <h3>Soins Homme</h3>
+                <div class="creme-item">
+                  <img src="images/out-0 (13).webp" width="300" alt="Logo Shop224">
+                  <h4>Hydratant Intense</h4>
+                  <p>Protection et hydratation 24h</p>
+                  <a href="soinshommes.html" class="cta-btn">Explorer la Collection</a>
+                </div>
+              </div>
+              
+              <div class="creme-card femme-card">
+                <h3>Soins Femme</h3>
+                <div class="creme-item">
+                  <img src="images/out-0 (12).webp" width="300" alt="Logo Shop224">
+                  <h4>Crème Anti-âge</h4>
+                  <p>Formule régénérante</p>
+                  <a href="soinsfemmes.html" class="cta-btn">Explorer la Collection</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section id="maquillage">
+            <h2 class="section-title">Maquillage</h2>
+            <div class="makeup-grid">
+              <div class="makeup-item">
+                <img src="images/out-0 (8).webp" width="300" alt="Logo Shop224">
+                <h4>Pour les Lèvres</h4>
+                <p>Tenue longue durée</p>
+                <a href="levres.html" class="cta-btn">Explorer la Collection</a>
+              </div>
+              <div class="makeup-item">
+                <img src="images/out-0 (10).webp" width="300" alt="Logo Shop224">
+                <h4>Pour le visage</h4>
+                <p>Volume extrême</p>
+                <a href="visages.html" class="cta-btn">Explorer la Collection</a>
+              </div>
+              <div class="makeup-item">
+                <img src="images/out-0 (20).webp" width="300" alt="Logo Shop224">
+                <h4>Pour le contours des Yeux</h4>
+                <p>Couvrance parfaite</p>
+                <a href="yeux.html" class="cta-btn">Explorer la Collection</a>
+              </div>
+            </div>
+          </section>
+    </main>
+    <section class="newsletter">
+        <h2>Restez informé de nos nouveautés</h2>
+        <form>
+          <input type="email" placeholder="Votre adresse e-mail" required>
+          <button type="submit">S'abonner</button>
+        </form>
+      </section>
+    
+      <div class="chat-widget">
+        <div class="chat-icon">💬</div>
+        <div class="chat-content">
+          <!-- Contenu du chat -->
+        </div>
+      </div>
+    <footer>
+        <p>&copy; 2025 Shop224 par YATTARA Ousmane. Tous droits réservés.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/kankoushop" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com/kankoushop" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/kankoushop" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+    </footer>
+    </div>
+
+    <script src="slider.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

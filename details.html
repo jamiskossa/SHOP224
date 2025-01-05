@@ -1,0 +1,453 @@
+<html><head><base href="https://example.com/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* Variables et styles généraux */
+:root {
+  --primary-color: #00f7ff;
+  --male-color: #2196F3;
+  --female-color: #FF4081;
+  --dark-bg: #1a1a2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: var(--dark-bg);
+  color: white;
+}
+
+/* Navigation */
+nav {
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Styles des sections */
+section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Section Parfums */
+.parfums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.parfum-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.parfum-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,247,255,0.3);
+}
+
+.homme-card {
+  border: 2px solid var(--male-color);
+}
+
+.femme-card {
+  border: 2px solid var(--female-color);
+}
+
+/* Section Crèmes */
+.cremes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.creme-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Section Maquillage */
+.makeup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.makeup-item {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--primary-color),
+                 0 0 20px var(--primary-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--primary-color),
+                 0 0 30px var(--primary-color);
+  }
+}
+
+/* New Product Detail Styles */
+.product-detail {
+  padding: 2rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+}
+
+.thumbnail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: var(--primary-color);
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  cursor: zoom-in;
+}
+
+.product-info {
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.product-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.product-price {
+  font-size: 2rem;
+  color: white;
+  margin: 1rem 0;
+}
+
+.stock-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-add {
+  background: var(--primary-color);
+  color: var(--dark-bg);
+}
+
+.btn-checkout {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,247,255,0.3);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .parfums-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <img src="images/SHOP224.png" alt="Logo Shop224">
+    </div>
+    <button class="toggle-menu">☰</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#parfums">Parfums</a></li>
+            <li><a href="#cremes">Crèmes</a></li>
+            <li><a href="#maquillage">Maquillage</a></li>            
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="product-detail" class="product-detail">
+  <div class="product-gallery">
+    <div class="thumbnail-container">
+      <img src="https://via.placeholder.com/80x80" class="thumbnail active" data-src="https://via.placeholder.com/800x800" alt="Product 1">
+      <img src="https://via.placeholder.com/80x80" class="thumbnail" data-src="https://via.placeholder.com/800x800" alt="Product 2">
+      <img src="https://via.placeholder.com/80x80" class="thumbnail" data-src="https://via.placeholder.com/800x800" alt="Product 3">
+    </div>
+    <img src="https://via.placeholder.com/800x800" class="main-image" alt="Main Product">
+  </div>
+  
+  <div class="product-info">
+    <h1 class="product-title">N°5 DE CHANNEL</h1>
+    <p class="product-description">Une fragrance unique qui combine élégance et modernité. Notes de tête : agrumes, Notes de cœur : jasmin, Notes de fond : bois de santal.</p>
+    <div class="product-price">72.99€</div>
+    <div class="stock-info">
+      <span>Stock disponible:</span>
+      <strong>15 unités</strong>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add">Ajouter au panier</button>
+      <button class="btn btn-checkout">Procéder au paiement</button>
+    </div>
+  </div>
+</section>
+
+<div class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img src="" alt="Product Zoomed">
+  </div>
+</div>
+
+<script>
+// Animation au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.parfum-card, .creme-card, .makeup-item').forEach((el) => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(50px)';
+  observer.observe(el);
+});
+
+// Smooth scroll
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Hover effects
+document.querySelectorAll('.parfum-card, .creme-card, .makeup-item').forEach(card => {
+  card.addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.05)';
+  });
+  
+  card.addEventListener('mouseout', function() {
+    this.style.transform = 'scale(1)';
+  });
+});
+
+// Product Gallery
+const thumbnails = document.querySelectorAll('.thumbnail');
+const mainImage = document.querySelector('.main-image');
+const modal = document.querySelector('.modal');
+const modalImage = modal.querySelector('img');
+const closeModal = document.querySelector('.close-modal');
+
+thumbnails.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    // Remove active class from all thumbnails
+    thumbnails.forEach(t => t.classList.remove('active'));
+    // Add active class to clicked thumbnail
+    thumb.classList.add('active');
+    // Update main image
+    mainImage.src = thumb.dataset.src;
+  });
+});
+
+mainImage.addEventListener('click', () => {
+  modalImage.src = mainImage.src;
+  modal.style.display = 'flex';
+});
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Animation for buttons
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+  button.addEventListener('mouseover', () => {
+    button.style.transform = 'translateY(-3px)';
+    button.style.boxShadow = '0 5px 15px rgba(0,247,255,0.3)';
+  });
+  
+  button.addEventListener('mouseout', () => {
+    button.style.transform = 'translateY(0)';
+    button.style.boxShadow = 'none';
+  });
+});
+
+// Stock management simulation
+let stock = 15;
+const addToCartBtn = document.querySelector('.btn-add');
+const stockDisplay = document.querySelector('.stock-info strong');
+
+addToCartBtn.addEventListener('click', () => {
+  if (stock > 0) {
+    stock--;
+    stockDisplay.textContent = `${stock} unités`;
+    addToCartBtn.classList.add('added');
+    setTimeout(() => addToCartBtn.classList.remove('added'), 1000);
+  }
+  if (stock === 0) {
+    addToCartBtn.disabled = true;
+    addToCartBtn.textContent = 'Rupture de stock';
+  }
+});
+</script>
+
+</body></html>
